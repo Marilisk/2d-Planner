@@ -10,11 +10,7 @@ export const ElemParams = ({ drag, lastDragId, lastDragRotate, touchedItems, mou
 
 
     return <div className={c.wrap}>
-        <h2>Параметры элемента
-            {/* <span className={c.output}>
-                {lastDrag} {lastDrag && touchedItems.find(el => el.id === lastDrag).name}
-            </span> */}
-        </h2>
+        <h2>Параметры элемента</h2>
 
         <div className={c.block}>
             <div>

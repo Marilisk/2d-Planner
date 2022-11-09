@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useCallback } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setInitCs, setMapCs, changeMouseCs, setDrag, duplicateItem, throwOnMap, deleteTouchedElem, setLastDragId } from '../../redux/furnitureSlice';
@@ -6,6 +7,7 @@ import c from './Elements.module.scss';
 import { ElemParams } from './ElemParams/ElemParams';
 import { FurnitureItem } from './FurnitureItem/FurnitureItem';
 import { MovedItem } from './MovedItem/MovedItem';
+import { RoomParams } from './RoomParams/RoomParams';
 
 export const Elements = () => {
     const dispatch = useDispatch();
@@ -32,13 +34,13 @@ export const Elements = () => {
     const map = useRef(null);
 
     const initCords = useSelector(state => state.furniture.initCords);
-    const setInitCords = (x, y) => {
-        dispatch(setInitCs(x, y));
-    }
+    const setInitCords = useCallback((x, y) => {
+            dispatch(setInitCs(x, y));
+        }, [dispatch]); 
     const mapCords = useSelector(state => state.furniture.mapCords);
-    const setMapCords = (x, y) => {
+    const setMapCords = useCallback((x, y) => {
         dispatch(setMapCs(x, y));
-    }
+    }, [dispatch]); 
 
     const mouseCords = useSelector(state => state.furniture.mouseCords);
     const handleMouseMove = (clX, clY) => {
@@ -50,7 +52,7 @@ export const Elements = () => {
         setInitCords({ x: cords.left + window.pageXOffset, y: cords.top + window.pageYOffset });// board coords setted
         let mapCords = map.current.getBoundingClientRect();
         setMapCords({ x: mapCords.left + window.pageXOffset, y: mapCords.top + window.pageYOffset }); // board coords setted
-    }, [size.clientHeight, size.clientWidth]);
+    }, [size.clientHeight, size.clientWidth, setInitCords, setMapCords]);
 
     const handleMouseDown = ({ ex, ey, index }) => {
         dispatch(duplicateItem({ ex, ey, index }));
@@ -109,9 +111,9 @@ export const Elements = () => {
                     mouseCords={mouseCords} 
                     mapCords={mapCords} />
 
-                {/* <RoomParams drag={drag} touchedItemsLength={touchedItems.length} mouseCords={mouseCords} mapCords={mapCords} /> */}
+                <RoomParams lastDragId={lastDragId} mouseCords={mouseCords} mapCords={mapCords} />
             </div>
-            <div className={c.map} >
+            <div className={c.map} /* onSelect={() => false} */ >
                 <p>Карта заведения</p>
                 <div ref={map} className={c.place} >
 

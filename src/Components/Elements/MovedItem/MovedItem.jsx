@@ -6,6 +6,10 @@ import { imgLib } from './../../../assets/furniture images/imgLib';
 export const MovedItem = ({ item, x, y, lastDragId, handleMouseDown, handleMouseUp }) => {
     
     return <div className={lastDragId === item.id ? c.lastDragItem : c.item}
+        /* onSelect={() => false}
+        onSelectCapture={() => false}
+        onDrag={() => false} */
+
         draggable={false}
         id={item.id}
         style={{ top: y, left: x, width: item.sizeX + 'px', 

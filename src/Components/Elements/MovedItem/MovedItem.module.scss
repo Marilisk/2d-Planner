@@ -6,11 +6,12 @@ $blue: #475B73;
 .item, .lastDragItem {
     position: absolute;
     cursor: grab;
+    user-select: none;
     color: white;
     text-align: center;
     font-size: 12px;
     font-weight: 600;
-    //transition: all 50ms;
+    
     & img {
         z-index: -1;
         pointer-events: none;

@@ -13,17 +13,17 @@ $blue: #475B73;
     border: 1px solid transparent;
     //margin-right: 4px;
 
-    
 }
+
 .item {
     background: $blue;
     border: 1px solid transparent;
     border-radius: 8px;
     color: white;
     position: absolute;
-    cursor: pointer;
-    //margin-right: 4px;
-    
+    cursor: grab;
+    user-select: none;
+    //margin-right: 4px;   
 
 }
 
