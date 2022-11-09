@@ -1,0 +1,69 @@
+$black: #121212;
+$lightBorderColor: #F1F3F7;
+$darkBorderColor: #1F1F1F;
+$commonBorderRadius: 12px;
+
+
+.wrap {
+    width: 100%;
+    display: flex;
+    & > div {
+        border-radius: $commonBorderRadius;
+        margin-top: 20px;
+    }
+}
+
+.map {
+    width: 583px;
+    height: 620px;
+    background: $black;
+    color: white;
+    margin-left: 10px;
+    border-radius: $commonBorderRadius;
+    p {
+        font-weight: 600;
+        height: 2em;
+        display: block;
+        padding: .8em;
+        padding-bottom: .3em;
+        margin: 0;
+    }
+}
+.place {
+    border: 2px solid $darkBorderColor;
+    height: 89%;
+    display: grid;
+    margin: .48em;
+    background-color: $black;
+    background-image: 
+        linear-gradient($darkBorderColor 1px, transparent 1px),
+        linear-gradient(90deg, $darkBorderColor 1px, transparent 1px);
+    background-size: 
+        12px 12px,
+        12px 12px;
+    background-position: 
+        -1px -1px,
+        -1px -1px;
+
+}
+.elementsBoard {
+    width: 580px;
+    height: 200px;
+    background: white;
+    border: 1px solid $lightBorderColor;
+    border-radius: $commonBorderRadius;
+    
+    &:hover {
+        box-shadow: 0 1px 12px 0 hsla(210, 7%, 22%, 0.06),
+        0 2px 6px 0 hsla(210, 7%, 22%, 0.08);
+        border-color: transparent; 
+    }
+    
+}
+
+.elements {
+    display: flex;
+    margin: 16px;
+    //border: 1px solid blueviolet;
+}
+

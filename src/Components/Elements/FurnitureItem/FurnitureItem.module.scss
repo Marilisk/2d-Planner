@@ -1,0 +1,29 @@
+$black: #121212;
+$blue: #475B73;
+
+
+.itemWrapper {
+    color: $blue;
+    font-size: 12px;
+    font-weight: 600;
+    width: 97px;
+    height: 50px;
+    margin-top: 90px;
+    text-align: left;
+    border: 1px solid transparent;
+    //margin-right: 4px;
+
+    
+}
+.item {
+    background: $blue;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: white;
+    position: absolute;
+    cursor: pointer;
+    //margin-right: 4px;
+    
+
+}
+

@@ -1,0 +1,34 @@
+$black: #121212;
+$blue: #475B73;
+
+
+
+.item, .lastDragItem {
+    position: absolute;
+    cursor: grab;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    //transition: all 50ms;
+    & img {
+        z-index: -1;
+        pointer-events: none;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+.lastDragItem {
+    transition: transform 400ms;
+    & img {
+        border: 1px solid white;
+        border-radius: 8px;
+
+    }
+    
+
+}
+

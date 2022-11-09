@@ -1,0 +1,37 @@
+$lightBorderColor: #F1F3F7;
+
+.appWrap {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 12fr;
+    grid-template-areas:
+     'h h' 
+     'n a' ;
+     grid-row-gap: 1px;
+     grid-column-gap: 4px;
+     min-height: 100vh;
+    > div {
+        padding: 4px;
+    }
+
+}
+.headerWrap {
+    grid-area: h;
+    background: white;
+    border: 1px solid $lightBorderColor;
+    
+
+}
+.navigationWrap {
+    grid-area: n;
+    background: white;
+    border: 1px solid $lightBorderColor;
+    min-width: 200px;
+    
+}
+.desktopWrap {
+    grid-area: a;
+    background: #FAFAFB;
+    min-width: 1180px;
+    
+}
