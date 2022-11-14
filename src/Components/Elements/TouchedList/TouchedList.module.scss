@@ -1,0 +1,111 @@
+$black: #121212;
+$lightBorderColor: #F6F9FC;
+$darkBorderColor: #1F1F1F;
+$blue: #475B73;
+$commonBorderRadius: 12px;
+$blue-bright: #325AA7;
+
+
+.wrap {
+    font-weight: 600;
+    user-select: none;
+    width: 580px;
+    height: 400px;
+    height: auto;
+    //overflow: hidden;
+    color: $blue;
+    border-radius: $commonBorderRadius;
+    margin-top: 20px;
+    background: white;
+    border: 1px solid $lightBorderColor;
+    h2 {
+        margin: 20px auto 0 20px;
+        span {
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+
+}
+
+.blockWrap {
+    //overflow: scroll;
+}
+
+.block {
+    display: flex;
+    margin: 6px 20px 20px 20px;
+    font-size: 12px;
+    text-align: center;
+    
+    & p {
+        font-weight: 600;
+        height: 2em;
+    }
+    div {
+        width: 20%;
+        margin-right: 6px;
+    }
+    .output {
+        background: $lightBorderColor;
+        //font-size: 14px;
+        display: block;
+        border-radius: $commonBorderRadius;
+        padding: 6px;
+        height: 34px;
+        font-weight: 400;   
+    }
+}
+
+.firstRow {
+    display: flex;
+    justify-content: space-between;
+    p {
+        display: inline-block;
+        margin: 28px auto auto 0;
+
+    }
+}
+
+.btnBlock {
+    margin: 24px 16px auto auto;
+    button {
+        background: $blue-bright;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 8px;
+        color: white;
+        width: 108px;
+        height: 30px;
+        border: none;
+        margin-bottom: 8px;
+        display: flex;
+        cursor: pointer;
+        &:hover {
+            background: $blue;
+            transition: 400ms;
+        }
+        span {
+            display: inline-block;
+            height: 16px;
+            margin: 0;
+            margin-top: 8px;
+            margin-left: 6px;
+        }
+        img {
+            height: 14px;
+            margin-left: 8px;
+            margin: 0 auto;
+            margin-top: 7px;
+        }
+    }
+    .delBtn {
+        background: #FFEDEC;
+        color: #FA5548;
+        &:hover {
+            background: #FFFAF9;
+            
+        }
+    }
+}

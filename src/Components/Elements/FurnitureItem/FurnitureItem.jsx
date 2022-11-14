@@ -5,7 +5,11 @@ import {imgLib} from './../../../assets/furniture images/imgLib';
 export const FurnitureItem = ({ item, x, y, handleMouseDown, index}) => {
     
     return <div className={c.itemWrapper}>
-            {item.name}
+
+            <p style={{ left: x, width: item.sizeX+'px' }}>
+                {item.name}
+            </p>
+
             <div className={c.item}
                 draggable={false}
                 id={item.id}

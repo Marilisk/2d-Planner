@@ -1,9 +1,10 @@
 $black: #121212;
-$lightBorderColor: #F6F9FC;
+$lightBorderColor: #F5F7F8;
 $darkBorderColor: #1F1F1F;
-$blue: #475B73;
+$blue: #697B8C;
 $commonBorderRadius: 12px;
 $blue-bright: #325AA7;
+$light-blue: #F2F4F5;
 
 
 .wrap {
@@ -17,90 +18,186 @@ $blue-bright: #325AA7;
     margin-top: 20px;
     background: white;
     border: 1px solid $lightBorderColor;
+    transition: all 500ms; 
     /* &:hover {
         box-shadow: 0 1px 12px 0 hsla(210, 7%, 22%, 0.06),
         0 2px 6px 0 hsla(210, 7%, 22%, 0.08);
         border-color: transparent; 
     } */
     h2 {
-        margin: 20px auto 0 20px;
+        margin: 0px auto 0 20px;
+
         span {
             font-size: 12px;
             font-weight: 600;
         }
     }
+}
 
+.headWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    label {
+        font-size: 12px;
+        margin-top: 10px;
+        
+    }
+}
 
+.immobilizedRadioBtn, .notImmobilizedRadioBtn {
+    outline: none;
+    margin-right: 30px;
+    margin-top: 12px;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    &::before {
+        position: absolute;
+        top: -1px;
+        left: -2px;
+        content: '';
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: $blue;
+        border: 2px solid transparent;
+
+    }
+}
+
+.notImmobilizedRadioBtn {
+    &::before {
+        border: 2px solid $blue;
+        background: white;
+    }
 }
 
 .block {
     display: flex;
     margin: 6px 20px 20px 20px;
-    //margin-top: 10px;
     font-size: 12px;
+    text-align: center;
+
     & p {
         font-weight: 600;
         height: 2em;
     }
+
     div {
         width: 20%;
         margin-right: 6px;
     }
+
     .output {
         background: $lightBorderColor;
-        //font-size: 14px;
         display: block;
         border-radius: $commonBorderRadius;
         padding: 6px;
-        height: 50px;
-        //max-height: 60px;
+        height: 34px;
         font-weight: 400;
-        
-    }
-    .btnBlock {
-        margin: 40px auto auto 10px;
     }
 
-    button {
+}
+
+.btnBlock {
+    position: relative;
+    margin: 24px auto auto 10px;
+
+}
+
+.rotateBtn,
+.addBtn,
+.submAddBtn {
+    background: $blue;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: white;
+    width: 108px;
+    height: 30px;
+    border: none;
+    margin-bottom: 8px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
         background: $blue-bright;
-        font-size: 12px;
-        font-weight: 600;
-        border-radius: 8px;
-        color: white;
-        width: 108px;
-        height: 30px;
-        border: none;
-        margin-bottom: 8px;
-        display: flex;
-        cursor: pointer;
-        &:hover {
-            background: $blue;
-            transition: 400ms;
-            //color: unset; 
-            //border: 1px solid $blue-bright;
-
-        }
-        span {
-            display: inline-block;
-            height: 16px;
-            margin: 0;
-            margin-top: 8px;
-            margin-left: 6px;
-        }
-        img {
-            height: 14px;
-            margin-left: 8px;
-            margin: 0 auto;
-            margin-top: 7px;
-        }
+        transition: 400ms;
     }
-    .delBtn {
-        background: #FFEDEC;
-        color: #FA5548;
-        &:hover {
-            background: #FFFAF9;
-            
-        }
+
+    span {
+        display: inline-block;
+        height: 16px;
+        margin: 0;
+        margin-top: 8px;
+        margin-left: 6px;
+    }
+
+    img {
+        height: 14px;
+        margin-left: 8px;
+        margin: 0 auto;
+        margin-top: 7px;
     }
 }
 
+.addBtn {
+    img {
+        height: 14px;
+    }
+
+    .icon {
+        font-size: 28px;
+        font-weight: 100;
+        margin: -1px auto auto 18px;
+    }
+}
+
+.addElemModal {
+    position: absolute;
+    //border: 1px solid $blue;
+    background: $lightBorderColor;
+
+    height: 120px;
+    min-width: 108px;
+    top: 74px;
+    left: 0;
+    border-radius: $commonBorderRadius ;
+
+    &>div {
+        display: flex;
+        //border: 1px solid pink;
+        width: 100%;
+        padding: 4px;
+        margin: 0 auto;
+    }
+
+    label {
+        width: 37%;
+        //padding-left: 10px;
+    }
+
+    input {
+        width: 40px;
+        margin: 0 auto;
+        outline: none;
+        border: none;
+    }
+}
+
+.sobmAddBtn {
+    background: white;
+    color: unset;
+    width: 64%;
+    margin: 10px auto;
+    padding-top: 9px;
+
+    &:hover {
+        //border: 1px solid blue;
+        background: $blue-bright;
+        color: white;
+
+    }
+}

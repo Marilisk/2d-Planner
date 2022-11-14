@@ -1,13 +1,13 @@
 $black: #121212;
-$lightBorderColor: #F6F9FC;
+$lightBorderColor: #F5F7F8;
 $darkBorderColor: #1F1F1F;
-$blue: #475B73;
+$blue: #697B8C;
 $commonBorderRadius: 12px;
 $blue-bright: #325AA7;
+$light-blue: #D6DCE0;
 
 
 .wrap {
-    //height: 50px;
     font-weight: 600;
     width: 580px;
     height: 200px;
@@ -15,28 +15,81 @@ $blue-bright: #325AA7;
     border-radius: $commonBorderRadius;
     margin-top: 20px;
     background: white;
-    border: 1px solid $lightBorderColor;
-    /* &:hover {
-        box-shadow: 0 1px 12px 0 hsla(210, 7%, 22%, 0.06),
-        0 2px 6px 0 hsla(210, 7%, 22%, 0.08);
-        border-color: transparent; 
-    } */
+    border: 1px solid $lightBorderColor;   
+}
+
+.headWrap {
+    display: flex;
     h2 {
         margin: 20px auto 0 20px;
         span {
             font-size: 12px;
             font-weight: 600;
         }
+    }    
+}
+
+.fakeSelect, .hiddenSelect {
+    position: absolute;
+    top: 36px;
+    left: -5px;
+    border: 2px solid $light-blue;
+    padding-top: 2px;
+    padding-left: 10px;
+    width: 146px;
+    border-radius: 4px;
+    transition: opacity 300ms;
+    z-index: 1;
+    opacity: 1;
+}
+.hiddenSelect {
+    pointer-events: none;
+    opacity: 0;
+}
+.optionsWrapper, .optionsWrapperFocused {
+    position: relative;
+    margin: 20px 20px auto auto; 
+    width: 140px;
+    border: 2px solid transparent;
+    background: $lightBorderColor;
+    height: 26px;
+    border-radius: 4px;
+    padding: 0;
+    padding: 36px auto auto 4px;
+    padding-top: 2px;
+    padding-left: 10px;
+    cursor: default;
+    img {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: 4px;
+        right: 0px;
+    } 
+}
+.optionsWrapperFocused {
+    box-shadow: 0 0 0 3px #D6DCE0;
+    border: 2px solid $blue;
+    background: white;
+}
+.fakeOption {
+    width: 144px;
+    height: 26px;
+    padding-left: 12px;
+    margin-left: -10px;
+    margin-top: -2px;
+    cursor: pointer;
+    &:hover {
+        background: #F5F7F8;
     }
-
-
 }
 
 .block {
-    display: flex;
     margin: 6px 20px 20px 20px;
-    //margin-top: 10px;
     font-size: 12px;
+    form {
+        display: flex;
+    }
     & p {
         font-weight: 600;
         height: 2em;
@@ -44,17 +97,29 @@ $blue-bright: #325AA7;
     div {
         width: 20%;
         margin-right: 6px;
+        text-align: center;
+        label {
+            margin: 10px auto 18px auto;
+            display: block;
+        }
     }
-    .output {
+    input {
         background: $lightBorderColor;
-        //font-size: 14px;
+        text-align: center;
         display: block;
         border-radius: $commonBorderRadius;
         padding: 6px;
-        height: 50px;
-        //max-height: 60px;
+        height: 36px;
+        outline: none;
+        width: 90px;
+        color: unset;
+        border: 1px solid transparent;
         font-weight: 400;
-        
+        &:focus {
+            border: 1px solid $blue;
+            background: white;
+
+        }
     }
     .btnBlock {
         margin: 40px auto auto 10px;
@@ -74,10 +139,7 @@ $blue-bright: #325AA7;
         cursor: pointer;
         &:hover {
             background: $blue;
-            transition: 400ms;
-            //color: unset; 
-            //border: 1px solid $blue-bright;
-
+            transition: 300ms;
         }
         span {
             display: inline-block;
@@ -98,7 +160,7 @@ $blue-bright: #325AA7;
         color: #FA5548;
         &:hover {
             background: #FFFAF9;
-            
+            transition: 300ms;
         }
     }
 }

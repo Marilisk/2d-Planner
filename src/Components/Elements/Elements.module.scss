@@ -14,11 +14,16 @@ $commonBorderRadius: 12px;
 }
 
 .map {
-    width: 583px;
-    height: 620px;
+    //width: 583px;
+    min-width: 583px;
+    height: auto;
+    width: auto;
+    max-width: none;
+    min-height: 620px;
     background: $black;
     color: white;
     margin-left: 10px;
+    margin-right: -104px;
     border-radius: $commonBorderRadius;
     p {
         font-weight: 600;
@@ -30,41 +35,17 @@ $commonBorderRadius: 12px;
     }
     user-select: none;
 }
-.place {
-    border: 2px solid $darkBorderColor;
-    height: 89%;
-    display: grid;
-    margin: .48em;
-    background-color: $black;
-    background-image: 
-        linear-gradient($darkBorderColor 1px, transparent 1px),
-        linear-gradient(90deg, $darkBorderColor 1px, transparent 1px);
-    background-size: 
-        12px 12px,
-        12px 12px;
-    background-position: 
-        -1px -1px,
-        -1px -1px;
 
-}
 .elementsBoard {
     width: 580px;
     height: 200px;
     background: white;
     border: 1px solid $lightBorderColor;
     border-radius: $commonBorderRadius;
-    
-    /* &:hover {
-        box-shadow: 0 1px 12px 0 hsla(210, 7%, 22%, 0.06),
-        0 2px 6px 0 hsla(210, 7%, 22%, 0.08);
-        border-color: transparent; 
-    } */
-    
 }
 
 .elements {
     display: flex;
     margin: 16px;
-    //border: 1px solid blueviolet;
 }
 
