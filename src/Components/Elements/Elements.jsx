@@ -53,8 +53,6 @@ export const Elements = ({ mapCords, rooms, currentRoom, initCords }) => {
         if (ex > mapCords.x && ey > mapCords.y 
                 && ex < (mapCords.x + currentRoom.width) 
                 && ey < (mapCords.y + currentRoom.height)  ) {
-            //console.log(mapCords.x + currentRoom.width);
-            //console.log(mapCords.x);
             dispatch(throwOnMap({ ex, ey, index }))
         } else {
             dispatch(deleteTouchedElem(index));
@@ -62,6 +60,7 @@ export const Elements = ({ mapCords, rooms, currentRoom, initCords }) => {
         dispatch(setDrag(null));
     };
 
+    // создаем предметы мебели для панели :
     const items = furniture.map((item, index) => {
         let x = initCords.x + (item.sizeX + 13) * index;
         let y = initCords.y;
@@ -73,6 +72,7 @@ export const Elements = ({ mapCords, rooms, currentRoom, initCords }) => {
             index={index} key={item.id} />
     });
 
+    // создаем передвигаемые предметы мебели для карты :
     const movedItems = currentRoom.touchedItems.map((item, index) => {
         let x, y;
         if (drag === item.id ) { //если элемент передвигаемый
@@ -99,7 +99,7 @@ export const Elements = ({ mapCords, rooms, currentRoom, initCords }) => {
             lastDragId={lastDragId} key={item.id} />
     });
 
-    return <div className={c.wrap} onMouseMove={(e) => handleMouseMove(e.pageX, e.pageY)}
+    return <div className={c.wrap} onPointerMove={(e) => handleMouseMove(e.pageX, e.pageY)}
         onDragStart={() => false} >
         <div>
             <div className={c.elementsBoard}>

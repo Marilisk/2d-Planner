@@ -37,6 +37,7 @@ $commonBorderRadius: 12px;
 }
 
 .elementsBoard {
+    touch-action: none;
     width: 580px;
     height: 200px;
     background: white;

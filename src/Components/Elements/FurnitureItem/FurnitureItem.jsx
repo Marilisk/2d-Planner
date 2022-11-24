@@ -14,12 +14,9 @@ export const FurnitureItem = ({ item, x, y, handleMouseDown, index}) => {
                 draggable={false}
                 id={item.id}
                 style={{ top: y, left: x, width: item.sizeX+'px', height: item.sizeY+'px' }}
-                onMouseDown={(e) => handleMouseDown(e, index)}
+                onPointerDown={(e) => handleMouseDown(e, index)}
             >
-                {/* {item.id} */}
                 <img alt='' src={imgLib[`${item.imgSrc}`]} />
-                
-                
             </div>
         </div>
 }

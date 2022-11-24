@@ -15,15 +15,15 @@ export const MovedItem = ({ item, x, y, lastDragId, handleMouseDown, handleMouse
     }
 
     return <div className={lastDragId === item.id ? c.lastDragItem : c.item}
-        draggable={false}
+        /* draggable={false} */
         id={item.id}
         style={{
             top: y, left: x,
-            /* width: item.sizeX + 'px', height: item.sizeY + 'px',  */
             transform: `rotate(${item.rotate * 90}deg)`,
         }}
-        onMouseDown={() => handleMouseDown()}
-        onMouseUp={(e) => !item.immobilised && handleMouseUp(e)} >
+        onPointerDown={() => handleMouseDown()}
+        onPointerUp={(e) => !item.immobilised && handleMouseUp(e)}
+        onDragStart={() => false} >
 
         <div className={c.imgContainer}>
             <img alt='' src={imgLib[`${item.imgSrc}`]}

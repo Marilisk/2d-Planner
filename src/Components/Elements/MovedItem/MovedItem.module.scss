@@ -6,6 +6,7 @@ $commonBorderRadius: 12px;
 .item, .lastDragItem {
     position: absolute;
     cursor: grab;
+    touch-action: none;
     user-select: none;
     color: white;
     text-align: center;

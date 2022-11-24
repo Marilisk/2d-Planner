@@ -60,6 +60,7 @@ $commonBorderRadius: 12px;
 }
 
 .place {
+    touch-action: none;
     border: 2px solid $darkBorderColor;
     display: grid;
     margin: 10px 10px 0px 10px;
