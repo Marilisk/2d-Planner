@@ -29,6 +29,7 @@ export const Elements = ({ mapCords, rooms, currentRoom, initCords }) => {
     };
     useEffect(() => {
         window.addEventListener('resize', resizeHandler);
+        return () => window.removeEventListener('resize', resizeHandler)
     });
 
     const mouseCords = useSelector(state => state.furniture.mouseCords);
